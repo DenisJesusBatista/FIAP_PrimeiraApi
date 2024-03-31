@@ -3,7 +3,7 @@
 public class Aluno
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string Idade { get; set; } 
-    public string Endereco { get; set; }
+    public string Name { get; set; } = String.Empty;
+    public string Idade { get; set; } = String.Empty;
+    public string Endereco { get; set; } = String.Empty;
 }
