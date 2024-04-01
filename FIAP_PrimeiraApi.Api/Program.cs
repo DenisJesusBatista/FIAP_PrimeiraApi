@@ -1,5 +1,6 @@
 using FIAP_PrimeiraApi.Api.Implementations;
 using FIAP_PrimeiraApi.Api.Interfaces;
+using FIAP_PrimeiraApi.Api.Logging;
 using FIAP_PrimeiraApi.Api.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +19,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Logging.ClearProviders();
+builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
+{
+    LogLevel = LogLevel.Information
+}));    
 
 builder.Services.AddSingleton<IAlunoCadastro, AlunoRepository>();
 

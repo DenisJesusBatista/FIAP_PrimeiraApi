@@ -35,4 +35,9 @@ public class AlunoRepository: IAlunoCadastro
     {
         return listaAluno;
     }
+
+    public Aluno RetornarAluno(int id)
+    {
+        throw new NotImplementedException();
+    }
 }
